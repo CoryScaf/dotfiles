@@ -1,0 +1,10 @@
+*
+
+!.gitignore
+!nvim
+!tmux
+!.git
+!nvim/*
+!tmux/tmux.conf
+
+nvim/.stfolder
