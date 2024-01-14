@@ -5,6 +5,9 @@
 !tmux
 !.git
 !nvim/*
+!nvim/lua/*
+!nvim/lua/config/*
+!nvim/lua/plugins/*
 !tmux/tmux.conf
 
 nvim/.stfolder
