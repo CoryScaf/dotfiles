@@ -8,6 +8,8 @@
 !nvim/lua/*
 !nvim/lua/config/*
 !nvim/lua/plugins/*
+!fish
+!fish/config.fish
 !tmux/tmux.conf
 
 nvim/.stfolder
