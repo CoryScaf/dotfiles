@@ -15,5 +15,7 @@
 !tmux/tmux.conf
 !i3/config
 !picom/picom.conf
+!rofi
+!rofi/*
 
 nvim/.stfolder
