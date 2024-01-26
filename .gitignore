@@ -3,6 +3,8 @@
 !.gitignore
 !nvim
 !tmux
+!picom
+!i3
 !.git
 !nvim/*
 !nvim/lua/*
@@ -11,5 +13,7 @@
 !fish
 !fish/config.fish
 !tmux/tmux.conf
+!i3/config
+!picom/picom.conf
 
 nvim/.stfolder
