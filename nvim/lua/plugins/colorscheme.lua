@@ -1,10 +1,8 @@
 return {
-  { "catppuccin/nvim" },
-
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "catppuccin",
-    },
-  },
+    {
+		"catppuccin/nvim",
+		config = function()
+			vim.cmd.colorscheme("catppuccin")
+		end,
+	}
 }
