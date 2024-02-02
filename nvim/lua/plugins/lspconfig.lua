@@ -35,6 +35,9 @@ return {
                 }
             }
         }
+        lspconfig.clangd.setup {
+            capabilities = capabilities
+        }
 
         vim.g.rustaceanvim = {
             tools = {

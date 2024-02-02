@@ -8,20 +8,20 @@ return {
 		},
 		keys = {
 			{
-                "<leader>po",
+                "<leader>fs",
                 function() require('telescope.builtin').find_files() end,
             },
 			{
-                "<C-p>",
+                "<leader>fg",
                 function() require('telescope.builtin').git_files() end,
             },
 			{
-                "<leader>pg",
+                "<leader>ff",
                 function() require('telescope.builtin').live_grep() end,
             },
 			{
-                "<leader>ps",
-                function() require('telescope.buitlin').current_buffer_fuzzy_find() end,
+                "<leader>fb",
+                function() require('telescope.builtin').current_buffer_fuzzy_find() end,
             },
 		},
 		opts = function()
