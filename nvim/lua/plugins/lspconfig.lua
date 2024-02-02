@@ -1,3 +1,19 @@
+local function lsp_on_attach(client, bufnr)
+    local opts = { buffer = bufnr }
+    vim.keymap.set('n', '<leader>cD', vim.lsp.buf.declaration, opts)
+    vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', '<leader>ci', vim.lsp.buf.implementation, opts)
+    vim.keymap.set('n', '<leader>ch', vim.lsp.buf.signature_help, opts)
+    vim.keymap.set('n', '<leader>ct', vim.lsp.buf.type_definition, opts)
+    vim.keymap.set('n', '<leader>crn', vim.lsp.buf.rename, opts)
+    vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, opts)
+    vim.keymap.set('n', '<leader>crf', vim.lsp.buf.references, opts)
+    vim.keymap.set('n', '<leader>f', function ()
+        vim.lsp.buf.format { async = true }
+    end, opts)
+end
+
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -17,7 +33,7 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
-                -- "rust_analyzer",
+                -- "rust_analyzer", uses rustup version
                 "clangd",
             },
         })
@@ -27,6 +43,9 @@ return {
         local lspconfig = require("lspconfig")
         lspconfig.lua_ls.setup {
             capabilities = capabilities,
+            on_attach = function(client, bufnr)
+                lsp_on_attach(client, bufnr)
+            end,
             settings = {
                 Lua = {
                     diagnostics = {
@@ -36,7 +55,10 @@ return {
             }
         }
         lspconfig.clangd.setup {
-            capabilities = capabilities
+            capabilities = capabilities,
+            on_attach = function(client, bufnr)
+                lsp_on_attach(client, bufnr)
+            end,
         }
 
         vim.g.rustaceanvim = {
@@ -49,11 +71,7 @@ return {
 
             server = {
                 on_attach = function(client, bufnr)
-                    vim.keymap.set("n", "<leader>ca",
-                        function()
-                            vim.cmd.RustLsp('codeAction')
-                        end,
-                        { silent = true, buffer = bufnr })
+                    lsp_on_attach(client, bufnr)
 
                     require("lsp-inlayhints").on_attach(client, bufnr)
                 end,
