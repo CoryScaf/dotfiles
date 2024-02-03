@@ -1,17 +1,20 @@
 local function lsp_on_attach(client, bufnr)
-    local opts = { buffer = bufnr }
-    vim.keymap.set('n', '<leader>cD', vim.lsp.buf.declaration, opts)
-    vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', '<leader>ci', vim.lsp.buf.implementation, opts)
-    vim.keymap.set('n', '<leader>ch', vim.lsp.buf.signature_help, opts)
-    vim.keymap.set('n', '<leader>ct', vim.lsp.buf.type_definition, opts)
-    vim.keymap.set('n', '<leader>crn', vim.lsp.buf.rename, opts)
-    vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, opts)
-    vim.keymap.set('n', '<leader>crf', vim.lsp.buf.references, opts)
-    vim.keymap.set('n', '<leader>f', function ()
+    vim.keymap.set('n', '<leader>cD', vim.lsp.buf.declaration, { buffer = bufnr, desc = "goto declaration" })
+    vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition, { buffer = bufnr, desc = "goto definition" })
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = bufnr, desc = "whatever hover is" })
+    vim.keymap.set('n', '<leader>ci', vim.lsp.buf.implementation, { buffer = bufnr, desc = "goto implementation" })
+    vim.keymap.set('n', '<leader>ch', vim.lsp.buf.signature_help, { buffer = bufnr, desc = "signature help" })
+    vim.keymap.set('n', '<leader>ct', vim.lsp.buf.type_definition, { buffer = bufnr, desc = "type definition" })
+    vim.keymap.set('n', '<leader>crn', vim.lsp.buf.rename, { buffer = bufnr, desc = "rename variable" })
+    vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, { buffer = bufnr, desc = "code action" })
+    vim.keymap.set('n', '<leader>crf', vim.lsp.buf.references, { buffer = bufnr, desc = "references" })
+    vim.keymap.set('n', '<leader>cf', function ()
         vim.lsp.buf.format { async = true }
-    end, opts)
+    end, { buffer = bufnr, desc = "format" })
+
+    require("which-key").register({
+        ["<leader>c"] = { name = "+code" },
+    })
 end
 
 return {
