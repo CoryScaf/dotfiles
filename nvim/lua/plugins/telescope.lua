@@ -28,19 +28,24 @@ return {
                 desc = "find git status",
             },
             {
-                "<leader>fd",
+                "<leader>fD",
                 "<cmd>Telescope diagnostics<CR>",
                 desc = "find diagnostics",
             },
 			{
-                "<leader>fr",
+                "<leader>fw",
                 function() require('telescope.builtin').live_grep() end,
-                desc = "grep",
+                desc = "grep workspace",
             },
 			{
-                "<leader>fb",
+                "<leader>fd",
                 function() require('telescope.builtin').current_buffer_fuzzy_find() end,
-                desc = "grep current buffer",
+                desc = "grep document",
+            },
+            {
+                "<leader>fb",
+                "<cmd>Telescope buffers<CR>",
+                desc = "find buffers",
             },
             {
                 "<leader>fm",

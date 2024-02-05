@@ -61,6 +61,8 @@ return {
             capabilities = capabilities,
             on_attach = function(client, bufnr)
                 lsp_on_attach(client, bufnr)
+
+                require("lsp-inlayhints").on_attach(client, bufnr)
             end,
         }
 
