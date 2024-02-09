@@ -38,6 +38,7 @@ return {
                 "lua_ls",
                 -- "rust_analyzer", uses rustup version
                 "clangd",
+                "texlab",
             },
         })
         require("lsp-inlayhints").setup()
@@ -65,6 +66,7 @@ return {
                 require("lsp-inlayhints").on_attach(client, bufnr)
             end,
         }
+        lspconfig.texlab.setup {}
 
         vim.g.rustaceanvim = {
             tools = {
