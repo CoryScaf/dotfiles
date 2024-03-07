@@ -1,0 +1,83 @@
+{
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}% {format_source}",
+        "format-bluetooth": " {icon} {volume}% {format_source}",
+        "format-bluetooth-muted": "  {icon} {format_source}",
+        "format-muted": "  {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+	"network": {
+		// "interface": "wlp2*", // (Optional) To force the use of this interface
+		"format-wifi": "",
+		"format-ethernet": "",
+		"tooltip-format": "{essid} ({signalStrength}%)",
+		"format-linked": "{ifname} (No IP) ",
+		"format-disconnected": "⚠",
+		"format-alt": "{ifname}: {ipaddr}/{cidr}"
+		},
+	"backlight": {
+		"tooltip": false,
+		"format": " {}%",
+		"interval":1,
+		"on-scroll-up": "light -A 5",
+		"on-scroll-down": "light -U 5"
+	},
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+	"tray":{
+		"icon-size":18,
+		"spacing": 10
+	},
+    "clock": {
+        "format": "{: %I:%M %p   %d/%m/%Y}"
+    },
+    "cpu": {
+        "interval": 15,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "custom/spotify": {
+    	"interval": 1,
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/spotify.sh",
+        "exec-if": "pgrep spotify",
+        "escape": true
+    },
+    "custom/launcher":{
+        "format": " ",
+        "on-click": "rofi -modi drun -show drun -config ~/.config/rofi/rofidmenu.rasi",
+        "on-click-right": "killall rofi"
+    },
+    "custom/power":{
+        "format": " ",
+        "on-click": "~/.config/hypr/powermenu.sh",
+    },
+    // The code following below is given in the great documentation for Waybar status bar under Useful Utilities in Hyprland wiki
+    "hyrpland/workspaces": {
+    	"format": "{icon}",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "on-click": "activate"
+	}
+}
