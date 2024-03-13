@@ -2,24 +2,27 @@
     {
         "output": "DP-1",
         "name": "4k",
+        "layer": "top",
         "include": [ "~/.config/waybar/default-modules.json" ],
         "modules-left": ["custom/launcher", "cpu", "memory", "network", "custom/spotify", "tray"],
         "modules-center": ["hyprland/workspaces"],
-        "modules-right": ["pulseaudio", "clock", "custom/power"],
+        "modules-right": ["custom/audio_idle_inhibitor", "pulseaudio", "clock", "custom/power"],
     },
     {
         "output": "DP-2",
         "name": "4k",
+        "layer": "top",
         "include": [ "~/.config/waybar/default-modules.json" ],
         "modules-left": ["custom/launcher", "cpu", "memory", "network", "custom/spotify", "tray"],
         "modules-center": ["hyprland/workspaces"],
-        "modules-right": ["pulseaudio", "clock", "custom/power"],
+        "modules-right": ["custom/audio_idle_inhibitor", "pulseaudio", "clock", "custom/power"],
     },
     {
         "output": "DP-3",
+        "layer": "top",
         "include": [ "~/.config/waybar/default-modules.json" ],
         "modules-left": ["custom/launcher", "cpu", "memory", "network", "custom/spotify", "tray"],
         "modules-center": ["hyprland/workspaces"],
-        "modules-right": ["pulseaudio", "clock", "custom/power"],
+        "modules-right": ["custom/audio_idle_inhibitor", "pulseaudio", "clock", "custom/power"],
     }
 ]
