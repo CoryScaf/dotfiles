@@ -1,6 +1,7 @@
 [
     {
         "name": "laptop",
+        "layer": "top",
         "include": [ "~/.config/waybar/default-modules.json" ],
         "modules-left": ["custom/launcher", "cpu", "memory", "network", "custom/spotify", "tray"],
         "modules-center": ["hyprland/workspaces"],
