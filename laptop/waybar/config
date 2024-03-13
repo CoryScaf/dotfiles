@@ -1,0 +1,9 @@
+[
+    {
+        "name": "laptop",
+        "include": [ "~/.config/waybar/default-modules.json" ],
+        "modules-left": ["custom/launcher", "cpu", "memory", "network", "custom/spotify", "tray"],
+        "modules-center": ["hyprland/workspaces"],
+        "modules-right": ["custom/audio_idle_inhibitor", "pulseaudio", "battery", "backlight", "clock", "custom/power"],
+    },
+]

@@ -10,6 +10,10 @@
     font-size: 20px;
 }
 
+.laptop * {
+    font-size: 26px;
+}
+
 window#waybar {
 	background: transparent;
 }
