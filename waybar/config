@@ -6,7 +6,7 @@
         "include": [ "~/.config/waybar/default-modules.json" ],
         "modules-left": ["custom/launcher", "cpu", "memory", "network", "custom/spotify", "tray"],
         "modules-center": ["hyprland/workspaces"],
-        "modules-right": ["custom/audio_idle_inhibitor", "pulseaudio", "clock", "custom/power"],
+        "modules-right": ["pulseaudio", "clock", "custom/power"],
     },
     {
         "output": "DP-2",
@@ -15,7 +15,7 @@
         "include": [ "~/.config/waybar/default-modules.json" ],
         "modules-left": ["custom/launcher", "cpu", "memory", "network", "custom/spotify", "tray"],
         "modules-center": ["hyprland/workspaces"],
-        "modules-right": ["custom/audio_idle_inhibitor", "pulseaudio", "clock", "custom/power"],
+        "modules-right": ["pulseaudio", "clock", "custom/power"],
     },
     {
         "output": "DP-3",
@@ -23,6 +23,6 @@
         "include": [ "~/.config/waybar/default-modules.json" ],
         "modules-left": ["custom/launcher", "cpu", "memory", "network", "custom/spotify", "tray"],
         "modules-center": ["hyprland/workspaces"],
-        "modules-right": ["custom/audio_idle_inhibitor", "pulseaudio", "clock", "custom/power"],
+        "modules-right": ["pulseaudio", "clock", "custom/power"],
     }
 ]

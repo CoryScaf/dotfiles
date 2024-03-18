@@ -118,7 +118,7 @@ menu=(
   [     Reboot]="systemctl reboot"
   [     Suspend]="systemctl suspend"
   [     Hibernate]=""
-  [     Lock]=""
+  [     Lock]="pidof hyprlock || hyprlock"
   [     Logout]="hyprctl dispatch exit"
   [     Cancel]=""
 )
