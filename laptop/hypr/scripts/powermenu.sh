@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 #
 # Use rofi/zenity to change system runstate thanks to systemd.
 #
@@ -104,7 +104,7 @@ function command_exists() {
 }
 
 # systemctl required
-if ! command_exists systemctl ; then
+if ! command_exists loginctl ; then
   exit 1
 fi
 
@@ -114,11 +114,11 @@ typeset -A menu
 # Menu with keys/commands
 
 menu=(
-  [     Shutdown]="systemctl poweroff"
-  [     Reboot]="systemctl reboot"
-  [     Suspend]="systemctl suspend"
+  [     Shutdown]="loginctl poweroff"
+  [     Reboot]="loginctl reboot"
+  [     Suspend]="loginctl suspend"
   [     Hibernate]=""
-  [     Lock]=""
+  [     Lock]="pidof hyprlock || hyprlock"
   [     Logout]="hyprctl dispatch exit"
   [     Cancel]=""
 )
