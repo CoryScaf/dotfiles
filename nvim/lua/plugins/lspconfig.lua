@@ -11,6 +11,8 @@ local function lsp_on_attach(client, bufnr)
     vim.keymap.set('n', '<leader>cf', function ()
         vim.lsp.buf.format { async = true }
     end, { buffer = bufnr, desc = "format" })
+    vim.keymap.set('n', '<leader>ch', vim.lsp.buf.hover, { buffer = bufnr, desc = "hover" })
+
 
     require("which-key").register({
         ["<leader>c"] = { name = "+code" },
