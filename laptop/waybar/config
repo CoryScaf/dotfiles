@@ -3,8 +3,8 @@
         "name": "laptop",
         "layer": "top",
         "include": [ "~/.config/waybar/default-modules.json" ],
-        "modules-left": ["custom/launcher", "cpu", "memory", "network", "custom/spotify", "tray"],
+        "modules-left": ["custom/launcher", "cpu", "memory", "custom/spotify", "tray"],
         "modules-center": ["hyprland/workspaces"],
-        "modules-right": ["custom/audio_idle_inhibitor", "pulseaudio", "battery", "backlight", "clock", "custom/power"],
+        "modules-right": ["idle_inhibitor", "wireplumber", "battery", "backlight", "clock", "custom/power"],
     },
 ]

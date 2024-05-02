@@ -90,7 +90,7 @@ window#waybar.hidden {
 	background: #bd93f9;
 }
 
-#pulseaudio {
+#wireplumber {
 	margin-top: 6px;
 	margin-left: 8px;
 	padding-left: 10px;
@@ -196,15 +196,27 @@ window#waybar.hidden {
 	background: #161320;
 }
 
+#idle_inhibitor {
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	padding-right: 5px;
+	border-radius: 10px;
+	transition: none;
+	color: #161320;
+	background: #DDB6F2;
+}
+
 #custom-launcher {
 	font-size: 24px;
 	margin-top: 6px;
 	margin-left: 8px;
 	padding-left: 10px;
-	padding-right: 5px;
+	padding-right: 15px;
 	border-radius: 10px;
 	transition: none;
-    color: #89DCEB;
+    color: #DDDAEC;
     background: #161320;
 }
 

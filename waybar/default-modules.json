@@ -1,11 +1,8 @@
 {
-    "pulseaudio": {
+    "wireplumber": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}% {format_source}",
-        "format-bluetooth": " {icon} {volume}% {format_source}",
-        "format-bluetooth-muted": "  {icon} {format_source}",
-        "format-muted": "  {format_source}",
-        "format-source": " {volume}%",
+        "format": "{icon} {volume}%",
+        "format-muted": " ",
         "format-source-muted": "",
         "format-icons": {
             "default": ["", "", ""]
@@ -65,7 +62,7 @@
         "escape": true
     },
     "custom/launcher":{
-        "format": " ",
+        "format": "󰣨",
         "on-click": "rofi -modi drun -show drun -config ~/.config/rofi/rofidmenu.rasi",
         "on-click-right": "killall rofi"
     },
@@ -79,5 +76,12 @@
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",
         "on-click": "activate"
-	}
+	},
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": " ",
+            "deactivated": " "
+        }
+    }
 }
