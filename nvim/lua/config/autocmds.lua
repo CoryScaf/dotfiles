@@ -6,10 +6,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "*",
+vim.api.nvim_create_autocmd("BufEnter", {
     callback = function()
-        vim.opt_local.formatoptions:remove({ 'r', 'o' })
+        vim.opt.formatoptions:remove { "c", "o" }
     end,
+    group = vim.api.nvim_create_augroup("general", { clear = true }),
+    desc = "Disable New Line Comment",
 })
-
