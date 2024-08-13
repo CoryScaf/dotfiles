@@ -1,0 +1,97 @@
+@import './variables.scss';
+
+$button-radius: 1em;
+$bar-spacing: 5px;
+$padding: 0.4em;
+
+@mixin unset($rec: false) {
+  all: unset;
+
+  @if $rec {
+    * {
+      all: unset;
+    }
+  }
+}
+
+.bar {
+  background-color: transparentize($med-dark-br, 0.4);
+
+  .panel-button {
+    @include unset(true);
+    font-size: $font-size;
+    font-weight: bold;
+    padding: 0 $padding*2;
+    margin: $padding*0.25 $padding*0.5;
+    background-color: $med-dark-br;
+    color: $light-br;
+    border-radius: $button-radius * 0.6;
+
+    &:hover {
+      background-color: mix($med-dark-br, $dark, 85%);
+    }
+
+    &:active {
+      background-color: mix($med-dark-br, $dark, 70%);
+    }
+  }
+
+  .workspaces {
+    background-color: transparentize($med-dark-br, 0.2);
+    border-radius: $button-radius * 0.2;
+
+    button {
+      @include unset(true);
+      font-size: $font-size;
+      font-weight: bold;
+      font-family: Kochi Mincho;
+      min-width: 1.8em;
+      min-height: 1.8em;
+      border-radius: $button-radius * 0.6;
+      margin: $padding*0.5;
+      background-color: $medium-br;
+      color: $med-dark-br;
+
+      &:hover {
+        background-color: mix($medium-br, $med-dark-br, 85%);
+      }
+
+      &:active {
+        background-color: mix($medium-br, $med-dark-br, 70%);
+      }
+
+      &.currentmonitor {
+        color: $med-dark-bl;
+      }
+
+      &.occupied {
+        color: $light-br;
+
+        &.currentmonitor {
+          color: $light-bl;
+        }
+      }
+
+      &.active {
+        background-color: $light-br;
+        color: $medium-br;
+        min-width: 2.5em;
+        min-height: 1.8em;
+
+        &.currentmonitor {
+          background-color: $light-bl;
+          color: $medium-bl;
+        }
+      }
+    }
+  }
+
+  .glyph {
+    font-weight: bold;
+    padding-right: $padding;
+  }
+
+  .playing {
+    color: #1DB954;
+  }
+}

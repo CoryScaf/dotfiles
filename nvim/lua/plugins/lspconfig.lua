@@ -179,6 +179,8 @@ return { -- LSP Configuration & Plugins
             --
             texlab = {},
 
+            asm_lsp = {},
+
             lua_ls = {
                 -- cmd = {...},
                 -- filetypes = { ...},

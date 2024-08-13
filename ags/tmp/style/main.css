@@ -1,0 +1,58 @@
+.bar {
+  background-color: rgba(64, 53, 47, 0.6); }
+  .bar .panel-button {
+    all: unset;
+    font-size: 1.4em;
+    font-weight: bold;
+    padding: 0 0.8em;
+    margin: 0.1em 0.2em;
+    background-color: #40352F;
+    color: #D9BD8B;
+    border-radius: 0.6em; }
+    .bar .panel-button * {
+      all: unset; }
+    .bar .panel-button:hover {
+      background-color: #382f2a; }
+    .bar .panel-button:active {
+      background-color: #312925; }
+  .bar .workspaces {
+    background-color: rgba(64, 53, 47, 0.8);
+    border-radius: 0.2em; }
+    .bar .workspaces button {
+      all: unset;
+      font-size: 1.4em;
+      font-weight: bold;
+      font-family: Kochi Mincho;
+      min-width: 1.8em;
+      min-height: 1.8em;
+      border-radius: 0.6em;
+      margin: 0.2em;
+      background-color: #73614C;
+      color: #40352F; }
+      .bar .workspaces button * {
+        all: unset; }
+      .bar .workspaces button:hover {
+        background-color: #6b5a48; }
+      .bar .workspaces button:active {
+        background-color: #645443; }
+      .bar .workspaces button.currentmonitor {
+        color: #364159; }
+      .bar .workspaces button.occupied {
+        color: #D9BD8B; }
+        .bar .workspaces button.occupied.currentmonitor {
+          color: #C4DDF2; }
+      .bar .workspaces button.active {
+        background-color: #D9BD8B;
+        color: #73614C;
+        min-width: 2.5em;
+        min-height: 1.8em; }
+        .bar .workspaces button.active.currentmonitor {
+          background-color: #C4DDF2;
+          color: #46658C; }
+  .bar .glyph {
+    font-weight: bold;
+    padding-right: 0.4em; }
+  .bar .playing {
+    color: #1DB954; }
+
+/*# sourceMappingURL=main.css.map */
